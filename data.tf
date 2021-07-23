@@ -1,12 +1,7 @@
 data "aws_availability_zones" "all" {}
-
 output "AZ" {
   value = data.aws_availability_zones.all.names
 }
-
-
-
-
 data "aws_ami" "image" {
   most_recent = true
   filter {
@@ -19,7 +14,6 @@ data "aws_ami" "image" {
   }
   owners = ["099720109477"] # Canonical
 }
-
 output "AMI_ID" {
   value = data.aws_ami.image.id
 }
